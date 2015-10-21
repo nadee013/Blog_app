@@ -9,6 +9,7 @@ BlogPage = React.createClass({
   render() {
     return (
       <div>
+        <a href="/">Back</a>
         <h1>{this.data.blog.name}</h1>
       </div>
     )
