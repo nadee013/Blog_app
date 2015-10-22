@@ -1,4 +1,6 @@
 subs = new SubsManager();
+var title = "Meteor react testing blog";
+DocHead.setTitle(title);
 
 Home = React.createClass({
   render() {
