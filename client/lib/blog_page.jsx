@@ -1,9 +1,15 @@
 BlogPage = React.createClass({
   mixins: [ReactMeteorData],
   getMeteorData() {
-    return {
-      blog: Blogs.findOne(Session.get("id"))
+    var id = this.props._id;
+    var data = {
+      'blog': []
     };
+    var handler = subs.subscribe("blog", id);
+    if(handler.ready()) {
+      data.blog = Blogs.findOne(id);
+    }
+    return data;
   },
 
   render() {
